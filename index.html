@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Tanzeel — Premium Motion & Video Editing Partner</title>
+  <meta name="description" content="Your content isn't underperforming because of your ideas. It's underperforming because of your edit. Short-form, long-form, and motion graphics.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Layout Guidelines (Dashed vertical border lines matching screenshot) -->
+  <div class="layout-guidelines">
+    <div class="guideline-line"></div>
+    <div class="guideline-line"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- Full-Width Top Navigation Bar with Dynamic Notch Toggle -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="header-logo">
+        <img src="logo.jpg" alt="Tanzeel Edition" class="logo-img">
+      </a>
+      
+      <nav class="header-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Work</a></li>
+          <li><a href="#testimonials">Feedback</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Centered Hanging Notch Toggle Button -->
+    <button class="header-notch-toggle" aria-label="Toggle Navigation">
+      <div class="notch-trigger-icon">
+        <span class="notch-dot"></span>
+      </div>
+    </button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero scroll-reveal">
+    <div class="container">
+      
+      <!-- Pulsing Badge (Rotating Text) -->
+      <div class="pill-badge">
+        <span class="badge-text"><span class="dot"></span> Editing & Motion Design Studio</span>
+      </div>
+      
+      <h1>Edits that make people stop scrolling.</h1>
+      
+      <p class="hero-desc">
+        Short-form, long-form, and motion graphics — handled by one editor who actually understands retention, pacing, and what makes a creator's feed feel premium. No outsourcing, no guesswork, just edits that perform.
+      </p>
+      
+      <!-- Hero CTAs -->
+      <div class="hero-ctas">
+        <a href="#portfolio" class="btn-access">View My Work</a>
+        <a href="#faqs" class="btn-work">Let's Talk</a>
+      </div>
+
+      <!-- Large Main Video Mockup Panel -->
+      <div class="main-video-mockup">
+        <video autoplay loop muted playsinline src="testimonial%20video/Reel%2001%20Final.mp4"></video>
+        
+        <div class="main-video-mockup-placeholder">
+          <!-- Mocking the tweet display in screenshot 1 -->
+          <div style="background: #111115; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; text-align: left; max-width: 420px; width: 90%; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <div style="width: 40px; height: 40px; border-radius: 50%; background: #ff3b30; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-size: 0.95rem;">T</div>
+              <div>
+                <span style="font-weight: 700; color: #fff; font-size: 0.95rem; display: block;">Tanzeel Motion <svg style="display:inline; width:14px; height:14px; fill:#3b82f6; vertical-align:middle;" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
+                <span style="font-size: 0.8rem; color: #86868b;">@tanzeelmotion</span>
+              </div>
+            </div>
+            <p style="font-size: 1.15rem; line-height: 1.4; color: #fff; font-weight: 500; margin-bottom: 16px;">
+              Most designers are <span style="background: #fff; color: #000; padding: 2px 6px; border-radius: 4px; font-weight: 700;">stuck</span>.
+            </p>
+            <div style="font-size: 0.8rem; color: #86868b; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px;">
+              3:22 PM · Jun 17, 2026 · <strong>25.6K</strong> Views
+            </div>
+          </div>
+          <p style="color: #666; font-size: 0.75rem; margin-top: 24px; text-transform: uppercase; letter-spacing: 0.1em;">Intro Video Mockup</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Metrics / Stats Section (2-Column Layout) -->
+  <section class="scroll-reveal" style="padding: 20px 0;">
+    <div class="container">
+      <div class="portal-metrics">
+        <div class="metric-card">
+          <div class="metric-number" id="stat-clicks">0</div>
+          <div class="metric-label">Videos Edited</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number" id="stat-reach">0</div>
+          <div class="metric-label">Yrs Editing Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section (The Editor) -->
+  <section id="about" class="scroll-reveal" style="padding: 100px 0 60px 0; border-top: 1px solid var(--border-primary);">
+    <div class="container">
+      <div class="section-header" style="text-align: left; max-width: 900px; margin-bottom: 60px;">
+        <span class="section-label">The Editor</span>
+        <h2 style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.1; margin-bottom: 24px;">
+          Not just an editor. A creative partner.
+        </h2>
+        <div style="max-width: 800px; margin-top: 24px;">
+          <p style="font-size: 1.15rem; line-height: 1.6; color: var(--text-secondary);">
+            I've spent the last 3 years cutting reels, structuring long-form narratives, and building motion graphics that perform. As the co-founder of MP4 Academy, I teach the exact pacing, hook, and editing systems I use on client work. I don't just trim clips—I engineer edits that capture attention within the first three seconds.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sticky Stacked Cards Highlights -->
+      <div class="sticky-cards-wrapper">
+        <div class="sticky-card">
+          <span class="card-badge">01</span>
+          <h3>Three Years, Three Formats</h3>
+          <p>Most editors specialize in one lane. I work across short-form, long-form, and motion graphics — so your content stays consistent whether it's a 15-second reel or a 20-minute YouTube video.</p>
+        </div>
+        <div class="sticky-card">
+          <span class="card-badge">02</span>
+          <h3>Co-Founder, MP4 Academy</h3>
+          <p>I teach editing as much as I practice it, which means every project gets the benefit of staying current with what's actually working right now, not what worked a year ago.</p>
+        </div>
+        <div class="sticky-card">
+          <span class="card-badge">03</span>
+          <h3>Built for Creators, Not Corporations</h3>
+          <p>I work best with personal brands and creators who want their content to feel intentional — clean cuts, purposeful motion, nothing that looks like a template.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="scroll-reveal" style="padding: 100px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Selected Work</span>
+        <h2>Work that speaks for itself</h2>
+        <p>A mix of short-form reels, long-form sit-downs, and motion graphic builds — each one edited with a different goal in mind, but the same standard of craft.</p>
+      </div>
+
+      <!-- Portfolio Slider Viewport -->
+      <div class="portfolio-slider-container">
+        <button class="slider-arrow prev-slide" aria-label="Previous Slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        </button>
+
+        <div class="portfolio-slider-viewport">
+          <div class="portfolio-slider-track" id="portfolio-track">
+            <!-- Dynamic cards will be rendered here by index.js -->
+          </div>
+        </div>
+
+        <button class="slider-arrow next-slide" aria-label="Next Slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted Logos Marquee Section -->
+  <section class="trusted-logos-section" style="padding: 60px 0; background: #ffffff; border-top: 1px solid var(--border-primary); overflow: hidden;">
+    <div class="container">
+      <div class="logos-header" style="text-align: center; margin-bottom: 30px;">
+        <span class="section-label">Trusted By</span>
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-muted); letter-spacing: -0.01em; margin-top: 8px;">100+ Happy Customers</h3>
+      </div>
+    </div>
+    
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <!-- Group 1 -->
+        <div class="marquee-group">
+          <div class="logo-item"><span>Hormozi</span></div>
+          <div class="logo-item font-serif"><span>Founders</span></div>
+          <div class="logo-item"><span>Justin Welsh</span></div>
+          <div class="logo-item logo-bold"><span>MP4 Academy</span></div>
+          <div class="logo-item logo-italic"><span>CreatorCo</span></div>
+          <div class="logo-item"><span>VlogNation</span></div>
+          <div class="logo-item"><span>GrowthLoop</span></div>
+          <div class="logo-item font-serif"><span>Narrative</span></div>
+        </div>
+        <!-- Group 2 (duplicate for seamless loop) -->
+        <div class="marquee-group" aria-hidden="true">
+          <div class="logo-item"><span>Hormozi</span></div>
+          <div class="logo-item font-serif"><span>Founders</span></div>
+          <div class="logo-item"><span>Justin Welsh</span></div>
+          <div class="logo-item logo-bold"><span>MP4 Academy</span></div>
+          <div class="logo-item logo-italic"><span>CreatorCo</span></div>
+          <div class="logo-item"><span>VlogNation</span></div>
+          <div class="logo-item"><span>GrowthLoop</span></div>
+          <div class="logo-item font-serif"><span>Narrative</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="scroll-reveal" style="padding: 100px 0 60px 0; border-top: 1px solid var(--border-primary);">
+    <div class="container">
+      <div class="section-header" style="text-align: left; max-width: 900px; margin-bottom: 60px;">
+        <span class="section-label">Client Feedback</span>
+        <h2>Don't take my word for it</h2>
+        <p>Specific metric-driven results and workflow feedback from actual partner channels.</p>
+      </div>
+
+      <!-- Sticky Stacked Testimonials Cards -->
+      <div class="sticky-testimonials-wrapper">
+        <!-- Card 1 -->
+        <div class="sticky-testimonial-card">
+          <span class="testimonial-badge">01</span>
+          <img src="feedback/Screenshot%202026-06-18%20035705.png" alt="Client Feedback 1" class="feedback-img">
+        </div>
+
+        <!-- Card 2 -->
+        <div class="sticky-testimonial-card">
+          <span class="testimonial-badge">02</span>
+          <img src="feedback/Screenshot%202026-06-18%20040108.png" alt="Client Feedback 2" class="feedback-img">
+        </div>
+
+        <!-- Card 3 -->
+        <div class="sticky-testimonial-card">
+          <span class="testimonial-badge">03</span>
+          <img src="feedback/Screenshot%202026-06-18%20040138.png" alt="Client Feedback 3" class="feedback-img">
+        </div>
+
+        <!-- Card 4 -->
+        <div class="sticky-testimonial-card">
+          <span class="testimonial-badge">04</span>
+          <img src="feedback/Screenshot%202026-06-18%20040403.png" alt="Client Feedback 4" class="feedback-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section id="faqs" class="scroll-reveal" style="padding: 100px 0; border-top: 1px solid var(--border-primary); border-bottom: 1px solid var(--border-primary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Questions</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-wrapper">
+        <!-- FAQ 1 -->
+        <div class="faq-card">
+          <div class="faq-header" id="faq-h-1">
+            <span class="faq-question">What kind of content do you edit?</span>
+            <div class="faq-toggle-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Short-form reels, long-form YouTube videos, and motion graphics — whatever format your content lives in, I can handle the edit end-to-end.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-card">
+          <div class="faq-header" id="faq-h-2">
+            <span class="faq-question">How fast is your turnaround?</span>
+            <div class="faq-toggle-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              48 hours for short-form, 4-5 days for long-form.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-card">
+          <div class="faq-header" id="faq-h-3">
+            <span class="faq-question">Do you handle scripting or just editing?</span>
+            <div class="faq-toggle-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              I handle editing and motion design end-to-end. If you have raw footage, a voiceover, or a general outline, I can structure the narrative and make it perform. For full-service scripting or storyboarding, let's discuss your project details.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-card">
+          <div class="faq-header" id="faq-h-4">
+            <span class="faq-question">How do we get started?</span>
+            <div class="faq-toggle-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Reach out through the contact button in the top menu or the button below, share your raw footage or brief, and I'll send back a quote and timeline within 24 hours.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark-Themed Contact Form Section -->
+  <section id="contact" class="scroll-reveal contact-section">
+    <div class="container" style="max-width: 800px;">
+      
+      <div class="contact-header">
+        <span class="contact-badge"><span class="dot"></span> Contact</span>
+        <h2>Contact us for amazing video editing projects</h2>
+      </div>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Form submitted successfully! (Backend integration pending)');">
+        
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" placeholder="jane@framer.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-video-type">What Kind of Video Do You Need?</label>
+          <div class="select-wrapper">
+            <select id="contact-video-type" required>
+              <option value="" disabled selected>Select...</option>
+              <option value="short-form">Short-Form Reels / TikToks</option>
+              <option value="long-form">Long-Form YouTube Videos</option>
+              <option value="motion-graphics">Motion Graphics / Vector Animations</option>
+              <option value="other">Other / Custom Request</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="budget-title-label">What's Your Budget Range?</label>
+          <div class="budget-options">
+            <label class="radio-label">
+              <input type="radio" name="budget" value="under-500" checked>
+              <span class="radio-circle"></span>
+              Under $500
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="budget" value="500-1000">
+              <span class="radio-circle"></span>
+              $500-$1000
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="budget" value="1000-2000">
+              <span class="radio-circle"></span>
+              $1000-$2000
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="budget" value="2000-5000">
+              <span class="radio-circle"></span>
+              $2000-$5000
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-vision">Share Your Vision</label>
+          <textarea id="contact-vision" placeholder="Describe your project, reference links, raw footage size..." required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit-btn">Submit</button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <a href="#" class="footer-logo">Tanzeel Edition</a>
+        <div class="copyright" style="margin-top: 8px;">
+          &copy; 2026 Tanzeel Edition. All rights reserved.
+        </div>
+      </div>
+      
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faqs">FAQ</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="index.js"></script>
+</body>
+</html>
