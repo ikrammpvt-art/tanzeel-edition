@@ -6,7 +6,7 @@
 // Dynamic Reels Database — Edit this list to add, update, or remove portfolio reel items
 const PORTFOLIO_REELS = [
   {
-    videoUrl: "testimonial%20video/Reel%2001%20Final.mp4",
+    videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740430/Reel_01_Final_oquerl.mp4",
     posterUrl: "",
     views: "142K",
     author: "@tanzeel.motion",
@@ -17,7 +17,7 @@ const PORTFOLIO_REELS = [
     description: "Premium short-form high-retention reel edit."
   },
   {
-    videoUrl: "testimonial%20video/Sean%20Oulashin%20-%2002.mp4",
+    videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740431/Sean_Oulashin_-_02_chtf2r.mp4",
     posterUrl: "",
     views: "98.5K",
     author: "@tanzeel.motion",
@@ -28,7 +28,7 @@ const PORTFOLIO_REELS = [
     description: "Fast-paced creator content cut with visual hooks."
   },
   {
-    videoUrl: "testimonial%20video/Final%20Reel-03.mp4",
+    videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740423/Final_Reel-03_q3dq8p.mp4",
     posterUrl: "",
     views: "115K",
     author: "@tanzeel.motion",
@@ -39,18 +39,7 @@ const PORTFOLIO_REELS = [
     description: "Custom transitions and retention-focused structuring."
   },
   {
-    videoUrl: "testimonial%20video/Cavo%20Feature%20Link%20Pages.mp4",
-    posterUrl: "",
-    views: "82K",
-    author: "@tanzeel.motion",
-    tag: "Motion Reel",
-    duration: "0:22",
-    gradient: "linear-gradient(225deg, #2d0c1e 0%, #0f0209 50%, #200512 100%)",
-    title: "Cavo Feature Link Pages",
-    description: "Fluid vector interface animation and feature highlights."
-  },
-  {
-    videoUrl: "testimonial%20video/Reel-07.mp4",
+    videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740427/Reel-07_imidho.mp4",
     posterUrl: "",
     views: "108K",
     author: "@tanzeel.motion",
@@ -61,7 +50,7 @@ const PORTFOLIO_REELS = [
     description: "Dynamic pacing and clean zoom-cut details."
   },
   {
-    videoUrl: "testimonial%20video/Lexi%20Reel%2009.mp4",
+    videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740422/Lexi_Reel_09_fnidl5.mp4",
     posterUrl: "",
     views: "123K",
     author: "@tanzeel.motion",
@@ -72,7 +61,7 @@ const PORTFOLIO_REELS = [
     description: "Engagement-optimized hook with kinetic typography."
   },
   {
-    videoUrl: "testimonial%20video/Trial%20Edit%20for%20Devin%20Jatho%20by%20Tanzeel%20Edition.mp4",
+    videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740429/Trial_Edit_for_Devin_Jatho_by_Tanzeel_Edition_xhm5bk.mp4",
     posterUrl: "",
     views: "185K",
     author: "@tanzeel.motion",
@@ -83,7 +72,7 @@ const PORTFOLIO_REELS = [
     description: "Premium trial sequence built for high organic reach."
   },
   {
-    videoUrl: "testimonial%20video/Final%20Video.mp4",
+    videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740412/Final_Video_s0fvaf.mp4",
     posterUrl: "",
     views: "94K",
     author: "@tanzeel.motion",
@@ -92,17 +81,6 @@ const PORTFOLIO_REELS = [
     gradient: "linear-gradient(225deg, #092a1d 0%, #02100a 50%, #0d3525 100%)",
     title: "Final Video Cut",
     description: "Seamless pacing, clean graphics, and high visual appeal."
-  },
-  {
-    videoUrl: "testimonial%20video/Reel-07%20R1.mp4",
-    posterUrl: "",
-    views: "102K",
-    author: "@tanzeel.motion",
-    tag: "Short-Form Reel",
-    duration: "0:14",
-    gradient: "linear-gradient(225deg, #290909 0%, #0f0202 50%, #290d0d 100%)",
-    title: "Reel - 07 Revision 1",
-    description: "Polished pacing edit for enhanced user engagement."
   }
 ];
 
