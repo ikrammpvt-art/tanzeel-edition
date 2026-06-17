@@ -405,14 +405,16 @@ function initPortfolioSlider() {
  */
 function initNotchNav() {
   const header = document.querySelector('.site-header');
-  const toggleBtn = document.querySelector('.header-notch-toggle');
   
-  if (!header || !toggleBtn) return;
+  if (!header) return;
   
-  // Click toggle (primarily for mobile/accessibility)
-  toggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    header.classList.toggle('is-open');
+  // Click toggle (primarily for mobile/touchscreen fallback or clicking the collapsed notch)
+  header.addEventListener('click', (e) => {
+    const isNavLink = e.target.closest('.header-nav a');
+    if (!isNavLink) {
+      e.stopPropagation();
+      header.classList.toggle('is-open');
+    }
   });
 
   // Hover triggers (for desktop cursor interactions)
@@ -424,13 +426,34 @@ function initNotchNav() {
     header.classList.remove('is-open');
   });
 
-  // Close menu when navigation links are clicked
+  // Sliding nav indicator logic
+  const navContainer = header.querySelector('.header-nav ul');
+  const indicator = header.querySelector('.nav-indicator');
   const navLinks = header.querySelectorAll('.header-nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      header.classList.remove('is-open');
+  
+  if (navContainer && indicator && navLinks.length > 0) {
+    navLinks.forEach(link => {
+      link.addEventListener('mouseenter', (e) => {
+        const rect = e.target.getBoundingClientRect();
+        const containerRect = navContainer.getBoundingClientRect();
+        
+        // Calculate relative position and width
+        const relativeLeft = rect.left - containerRect.left;
+        
+        indicator.style.left = `${relativeLeft}px`;
+        indicator.style.width = `${rect.width}px`;
+        indicator.style.opacity = '1';
+      });
+      
+      link.addEventListener('click', () => {
+        header.classList.remove('is-open');
+      });
     });
-  });
+    
+    navContainer.addEventListener('mouseleave', () => {
+      indicator.style.opacity = '0';
+    });
+  }
 
   // Close when clicking outside header
   document.addEventListener('click', (e) => {
