@@ -956,11 +956,6 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 4;
 }
 
-.sticky-testimonial-card:nth-child(5) {
-  top: 228px;
-  z-index: 5;
-}
-
 .sticky-testimonial-card:hover {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
   transform: translateY(-4px) scale(1.01);
