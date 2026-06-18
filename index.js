@@ -6,6 +6,28 @@
 // Dynamic Reels Database — Edit this list to add, update, or remove portfolio reel items
 const PORTFOLIO_REELS = [
   {
+    videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740422/Lexi_Reel_09_fnidl5.mp4",
+    posterUrl: "",
+    views: "123K",
+    author: "@tanzeel.motion",
+    tag: "Short-Form Reel",
+    duration: "0:16",
+    gradient: "linear-gradient(225deg, #281808 0%, #0c0502 50%, #280c08 100%)",
+    title: "Lexi Reel - 09",
+    description: "Engagement-optimized hook with kinetic typography."
+  },
+  {
+    videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740429/Trial_Edit_for_Devin_Jatho_by_Tanzeel_Edition_xhm5bk.mp4",
+    posterUrl: "",
+    views: "185K",
+    author: "@tanzeel.motion",
+    tag: "Short-Form Reel",
+    duration: "0:20",
+    gradient: "linear-gradient(225deg, #1c092a 0%, #0a0210 50%, #220d35 100%)",
+    title: "Devin Jatho Trial Edit",
+    description: "Premium trial sequence built for high organic reach."
+  },
+  {
     videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740430/Reel_01_Final_oquerl.mp4",
     posterUrl: "",
     views: "142K",
@@ -48,28 +70,6 @@ const PORTFOLIO_REELS = [
     gradient: "linear-gradient(225deg, #091c29 0%, #020a0f 50%, #0d1e29 100%)",
     title: "Reel - 07",
     description: "Dynamic pacing and clean zoom-cut details."
-  },
-  {
-    videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740422/Lexi_Reel_09_fnidl5.mp4",
-    posterUrl: "",
-    views: "123K",
-    author: "@tanzeel.motion",
-    tag: "Short-Form Reel",
-    duration: "0:16",
-    gradient: "linear-gradient(225deg, #281808 0%, #0c0502 50%, #280c08 100%)",
-    title: "Lexi Reel - 09",
-    description: "Engagement-optimized hook with kinetic typography."
-  },
-  {
-    videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740429/Trial_Edit_for_Devin_Jatho_by_Tanzeel_Edition_xhm5bk.mp4",
-    posterUrl: "",
-    views: "185K",
-    author: "@tanzeel.motion",
-    tag: "Short-Form Reel",
-    duration: "0:20",
-    gradient: "linear-gradient(225deg, #1c092a 0%, #0a0210 50%, #220d35 100%)",
-    title: "Devin Jatho Trial Edit",
-    description: "Premium trial sequence built for high organic reach."
   },
   {
     videoUrl: "https://res.cloudinary.com/dcpjgunwn/video/upload/v1781740412/Final_Video_s0fvaf.mp4",
