@@ -246,33 +246,39 @@ function initAccordions() {
   });
 }
 
-/**
- * 5. Portfolio Video Hover Playback
- */
 function initPortfolioVideos() {
   const cards = document.querySelectorAll('.portfolio-card');
   cards.forEach(card => {
     const video = card.querySelector('video');
     if (!video) return;
 
+    // Ensure video is muted on load
+    video.muted = true;
+
     const startPlayback = () => {
-      // Pause all other playing videos first to avoid overlapping audio
+      // Pause and mute all other playing videos first to avoid overlapping audio
       document.querySelectorAll('.portfolio-card video').forEach(otherVideo => {
         if (otherVideo !== video) {
           otherVideo.pause();
+          otherVideo.muted = true;
           otherVideo.closest('.portfolio-card').classList.remove('playing');
         }
       });
 
-      // Play the target video
+      // Play and unmute the target video
+      video.muted = false;
       video.play().catch(err => {
         console.warn("Video playback failed: ", err);
+        // Fallback to muted playback if browser blocks unmuted
+        video.muted = true;
+        video.play().catch(e => console.error("Muted playback fallback failed: ", e));
       });
       card.classList.add('playing');
     };
 
     const stopPlayback = () => {
       video.pause();
+      video.muted = true;
       card.classList.remove('playing');
     };
 
