@@ -145,6 +145,26 @@ function initCursor() {
       document.body.classList.remove('hovered-element');
     });
   });
+
+  // Click logo ripple effect (runs on desktop devices with cursor pointers)
+  window.addEventListener('click', (e) => {
+    if (window.matchMedia('(pointer: fine)').matches) {
+      createClickLogoEffect(e.clientX, e.clientY);
+    }
+  });
+
+  function createClickLogoEffect(x, y) {
+    const effect = document.createElement('div');
+    effect.className = 'click-logo-effect';
+    effect.style.left = `${x}px`;
+    effect.style.top = `${y}px`;
+    document.body.appendChild(effect);
+    
+    // Clean up DOM after animation completes
+    setTimeout(() => {
+      effect.remove();
+    }, 600);
+  }
 }
 
 /**
