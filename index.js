@@ -305,17 +305,11 @@ function renderPortfolio() {
         <div class="reel-container">
           <video loop muted playsinline preload="metadata" src="${reel.videoUrl || ''}" poster="${reel.posterUrl || ''}"></video>
           <div class="reel-overlay">
-            <span class="views">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-              ${reel.views} views
-            </span>
             <div class="play-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
             <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%;">
               <div style="text-align: left;">
-                <span style="font-weight: 700; font-size: 0.875rem; color: #fff; display: block; margin-bottom: 2px;">${reel.title}</span>
-                <span style="font-size: 0.75rem; color: rgba(255,255,255,0.7); display: block; margin-bottom: 2px;">${reel.author}</span>
                 <span style="font-size: 0.7rem; color: #ababba;">${reel.tag}</span>
               </div>
               <span class="duration">${reel.duration}</span>
