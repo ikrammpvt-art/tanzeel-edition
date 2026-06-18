@@ -53,6 +53,32 @@ body {
   min-height: 100vh;
 }
 
+/* Subtle Glassmorphism Background Mesh Glows */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  width: 45vw;
+  height: 45vw;
+  border-radius: 50%;
+  filter: blur(150px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.04;
+}
+
+body::before {
+  top: 10%;
+  right: -5%;
+  background: radial-gradient(circle, #ff3b30 0%, transparent 70%);
+}
+
+body::after {
+  top: 55%;
+  left: -5%;
+  background: radial-gradient(circle, #0071e3 0%, transparent 70%);
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -169,7 +195,9 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-50%);
   width: 58px; /* Collapsed width: just fits the logo */
   height: 44px; /* Collapsed height */
-  background: #000000;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 0 0 22px 22px;
   z-index: 9999;
   display: flex;
@@ -349,12 +377,14 @@ h1, h2, h3, h4, h5, h6 {
   background: radial-gradient(circle at 50% -20%, rgba(255, 59, 48, 0.04) 0%, transparent 60%);
 }
 
-/* Pill Badge: 500+ Videos Edited... */
 .pill-badge {
   display: inline-flex;
   align-items: center;
-  background: #000000;
-  padding: 4px 16px 4px 16px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 16px;
   border-radius: 9999px;
   margin-bottom: 36px;
   height: 34px;
@@ -918,12 +948,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .sticky-testimonial-card {
   position: sticky;
-  background: #ffffff;
-  border: 1px solid var(--border-primary);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 24px;
   padding: 48px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
-  transition: transform 0.3s var(--ease-apple), box-shadow 0.3s;
+  transition: transform 0.3s var(--ease-apple), box-shadow 0.3s, border-color 0.3s;
   transform-origin: center top;
   display: flex;
   flex-direction: column;
@@ -1099,7 +1131,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .faq-card {
-  background: var(--bg-tertiary);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border-primary);
   border-radius: 16px;
   overflow: hidden;
@@ -1109,11 +1143,12 @@ h1, h2, h3, h4, h5, h6 {
 .faq-card:hover {
   border-color: var(--accent-purple);
   box-shadow: 0 8px 25px rgba(255, 59, 48, 0.05);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .faq-card.active {
   border-color: var(--accent-purple);
-  background: #fbfbfc;
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 10px 30px rgba(255, 59, 48, 0.08);
 }
 
@@ -1710,13 +1745,21 @@ footer:hover::before {
 
 .sticky-card {
   position: sticky;
-  background: #ffffff;
-  border: 1px solid var(--border-primary);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 24px;
   padding: 48px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
-  transition: transform 0.3s var(--ease-apple), box-shadow 0.3s;
+  transition: transform 0.3s var(--ease-apple), box-shadow 0.3s, border-color 0.3s;
   transform-origin: center top;
+}
+
+.sticky-card:hover {
+  box-shadow: 0 20px 50px rgba(255, 59, 48, 0.08);
+  transform: translateY(-4px) scale(1.01);
+  border-color: var(--accent-purple);
 }
 
 .sticky-card:nth-child(1) {
@@ -1847,12 +1890,12 @@ button:active,
   }
 }
 
-/* Premium Light-Themed Contact Form Styling */
+/* Premium Dark-Themed Contact Form Styling */
 .contact-section {
-  background: var(--bg-primary);
+  background: #09090b;
   padding: 100px 0;
-  color: var(--text-primary);
-  border-top: 1px solid var(--border-primary);
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .contact-header {
@@ -1864,7 +1907,7 @@ button:active,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 59, 48, 0.08);
+  background: rgba(255, 59, 48, 0.1);
   color: var(--accent-purple);
   padding: 6px 14px;
   border-radius: 9999px;
@@ -1887,7 +1930,7 @@ button:active,
   font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 800;
   letter-spacing: -0.04em;
-  color: var(--text-primary);
+  color: #ffffff;
   line-height: 1.1;
   max-width: 600px;
   margin: 0 auto;
@@ -1916,7 +1959,7 @@ button:active,
 .budget-title-label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: #a1a1aa;
   letter-spacing: -0.01em;
 }
 
@@ -1924,23 +1967,25 @@ button:active,
 .form-group input[type="email"],
 .form-group textarea,
 .form-group select {
-  background: #f5f5f7;
-  border: 1px solid var(--border-primary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 16px 20px;
-  color: var(--text-primary);
+  color: #ffffff;
   font-family: var(--font-sans);
   font-size: 0.95rem;
   transition: all 0.3s var(--ease-apple);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: var(--accent-purple);
-  background: #ffffff;
-  box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08);
 }
 
 .select-wrapper {
@@ -1962,7 +2007,7 @@ button:active,
   transform: translateY(-50%);
   width: 10px;
   height: 6px;
-  background-color: var(--text-secondary);
+  background-color: #a1a1aa;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   pointer-events: none;
 }
@@ -1981,7 +2026,7 @@ button:active,
   cursor: pointer;
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: #e4e4e7;
   user-select: none;
 }
 
@@ -1992,7 +2037,7 @@ button:active,
 .radio-circle {
   width: 18px;
   height: 18px;
-  border: 1px solid var(--border-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -2023,8 +2068,8 @@ button:active,
 }
 
 .form-submit-btn {
-  background: #000000;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
   border: none;
   border-radius: 12px;
   padding: 18px 24px;
@@ -2033,7 +2078,7 @@ button:active,
   cursor: pointer;
   transition: all 0.3s var(--ease-apple);
   margin-top: 10px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .form-submit-btn:hover {
