@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolioVideos();
   initPortfolioSlider();
   initMagneticButtons();
+  initSmoothScroll();
+  initContactForm();
 });
 
 /**
@@ -461,7 +463,7 @@ function initBadgeRotator() {
   
   const texts = [
     '<span class="dot"></span> Editing & Motion Design Studio',
-    '<span class="dot"></span> 1000 Videos Edited For Creators'
+    '<span class="dot"></span> 1000+ Videos Edited For Creators'
   ];
   let index = 0;
   
@@ -482,8 +484,8 @@ function initBadgeRotator() {
  * 9. Magnetic Button Effects
  */
 function initMagneticButtons() {
-  // Bind effect to CTA buttons and slider navigation arrows
-  const magnets = document.querySelectorAll('.btn-access, .btn-work, .form-submit-btn, .slider-arrow');
+  // Bind effect to CTA buttons, slider navigation arrows, and WhatsApp button
+  const magnets = document.querySelectorAll('.btn-access, .btn-work, .form-submit-btn, .slider-arrow, .whatsapp-float');
   magnets.forEach(btn => {
     btn.addEventListener('mousemove', (e) => {
       const rect = btn.getBoundingClientRect();
@@ -501,6 +503,74 @@ function initMagneticButtons() {
     btn.addEventListener('mouseleave', () => {
       btn.style.transform = 'translate(0px, 0px) scale(1)';
       btn.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)'; // Smooth fluid bounce-back
+    });
+  });
+}
+
+/**
+ * 10. Lenis Smooth Scroll Integration
+ */
+let lenis;
+function initSmoothScroll() {
+  if (typeof Lenis === 'undefined') return;
+
+  lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Apple easeOutExpo
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Hook all anchor scroll animations to Lenis
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        lenis.scrollTo(target, { 
+          offset: 0, 
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        });
+      }
+    });
+  });
+}
+
+/**
+ * 11. Netlify Form AJAX submission handler
+ */
+function initContactForm() {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    
+    // Submit asynchronously to Netlify Form backend handler
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+      alert('Thank you! Your request has been sent successfully. Netlify will forward it to your email address.');
+      form.reset();
+    })
+    .catch((error) => {
+      console.error('Submission error:', error);
+      alert('Oops! There was an error submitting your form. Please try again.');
     });
   });
 }
