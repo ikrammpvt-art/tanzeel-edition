@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderPortfolio();
   initPortfolioVideos();
   initPortfolioSlider();
+  initMagneticButtons();
 });
 
 /**
@@ -475,4 +476,31 @@ function initBadgeRotator() {
       badgeText.style.transform = 'translateY(0)';
     }, 450);
   }, 4500);
+}
+
+/**
+ * 9. Magnetic Button Effects
+ */
+function initMagneticButtons() {
+  // Bind effect to CTA buttons and slider navigation arrows
+  const magnets = document.querySelectorAll('.btn-access, .btn-work, .form-submit-btn, .slider-arrow');
+  magnets.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      // Calculate mouse coordinates relative to the button center
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      // Pull strength factor (0.15 - 0.25 is perfect for subtle fluid feel)
+      const factor = 0.22;
+      
+      btn.style.transform = `translate(${x * factor}px, ${y * factor}px) scale(1.02)`;
+      btn.style.transition = 'none'; // Instant interactive response
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0px, 0px) scale(1)';
+      btn.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)'; // Smooth fluid bounce-back
+    });
+  });
 }
