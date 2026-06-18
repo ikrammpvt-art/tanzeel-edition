@@ -336,21 +336,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
-/* Sliding Liquid Hover Indicator */
-.nav-indicator {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 28px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 9999px;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0;
-  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-}
+
 
 @media (max-width: 768px) {
   .site-header.is-open {

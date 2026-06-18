@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolioVideos();
   initPortfolioSlider();
   initMagneticButtons();
-  initSmoothScroll();
   initContactForm();
 });
 
@@ -407,34 +406,13 @@ function initNotchNav() {
     header.classList.remove('is-open');
   });
 
-  // Sliding nav indicator logic
-  const navContainer = header.querySelector('.header-nav ul');
-  const indicator = header.querySelector('.nav-indicator');
+  // Close notch on menu link click
   const navLinks = header.querySelectorAll('.header-nav a');
-  
-  if (navContainer && indicator && navLinks.length > 0) {
-    navLinks.forEach(link => {
-      link.addEventListener('mouseenter', (e) => {
-        const rect = e.target.getBoundingClientRect();
-        const containerRect = navContainer.getBoundingClientRect();
-        
-        // Calculate relative position and width
-        const relativeLeft = rect.left - containerRect.left;
-        
-        indicator.style.left = `${relativeLeft}px`;
-        indicator.style.width = `${rect.width}px`;
-        indicator.style.opacity = '1';
-      });
-      
-      link.addEventListener('click', () => {
-        header.classList.remove('is-open');
-      });
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      header.classList.remove('is-open');
     });
-    
-    navContainer.addEventListener('mouseleave', () => {
-      indicator.style.opacity = '0';
-    });
-  }
+  });
 
   // Close when clicking outside header
   document.addEventListener('click', (e) => {
@@ -507,44 +485,7 @@ function initMagneticButtons() {
   });
 }
 
-/**
- * 10. Lenis Smooth Scroll Integration
- */
-let lenis;
-function initSmoothScroll() {
-  if (typeof Lenis === 'undefined') return;
 
-  lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Apple easeOutExpo
-    smoothWheel: true,
-    smoothTouch: false,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  // Hook all anchor scroll animations to Lenis
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href === '#') return;
-      
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        lenis.scrollTo(target, { 
-          offset: 0, 
-          duration: 1.2,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-        });
-      }
-    });
-  });
-}
 
 /**
  * 11. Netlify Form AJAX submission handler
